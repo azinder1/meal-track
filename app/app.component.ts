@@ -10,6 +10,8 @@ import { Meal } from './meal.model'
       <meal-list [childMealList]="masterMealList" (clickSender)="editMeal($event)"></meal-list>
 
       <edit-meal [childSelectedMeal]="selectedMeal" (doneEditingSender)="doneEditing()"></edit-meal>
+      <add-meal (newAddSender)="doneAdding()" (newMealSender)="addMeal($event)" [childNewMeal]="newMeal"></add-meal>
+      <button class="btn-floating btn-large waves-effect waves-light red" *ngIf="!newMeal" (click)="addMealFormShow()">Add</button>
     </div>
   </div>
   `
@@ -31,9 +33,16 @@ export class AppComponent{
   }
 
   doneEditing() {
-
     this.selectedMeal = null;
   }
-
+  addMealFormShow() {
+    this.newMeal = true;
+  }
+  addMeal(newMealFromChild: Meal) {
+    this.masterMealList.push(newMealFromChild);
+  }
+  doneAdding() {
+    this.newMeal = null;
+  }
 
 }
