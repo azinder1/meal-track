@@ -12,6 +12,8 @@ import{ Meal } from './meal.model';
     <input [(ngModel)]="childSelectedMeal.details">
     <label>Meal calories</label>
     <input [(ngModel)]="childSelectedMeal.calories">
+    <label>Date of Meal:</label>
+    <input  [(ngModel)]="childSelectedMeal.date">
     <button class='btn' (click)="doneEditing()">Update</button>
   </div>
   `

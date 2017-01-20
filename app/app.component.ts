@@ -21,9 +21,9 @@ import { Meal } from './meal.model'
 
 export class AppComponent{
   masterMealList: Meal[] = [
-    new Meal("Hamburger", "It was actually 3 hamburgers", 1000),
-    new Meal("Ice Cream", "My diet starts tomorrow", 500),
-    new Meal("Red Wine", "Pretty much a liquid fruit salad", 250)
+    new Meal("Hamburger", "It was actually 3 hamburgers", 1000, "2016-12-09"),
+    new Meal("Ice Cream", "My diet starts tomorrow", 500, "2016-12-09"),
+    new Meal("Red Wine", "Pretty much a liquid fruit salad", 250, "2016-12-09")
   ]
   selectedMeal = null;
   newMeal = null;

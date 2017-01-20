@@ -22,10 +22,11 @@ import{ Meal } from './meal.model'
           <span class="card-title">{{currentMeal.name}}</span>
           <hr>
           <ul>
-            <li>{{currentMeal.details}}</li>
-            <li>{{currentMeal.calories}}</li>
+            <li class="calories">{{currentMeal.calories}}</li>
+            <li><em>{{currentMeal.details}}</em></li>
+            <li>{{currentMeal.date}}</li>
           </ul>
-          <button class="btn waves-effect waves-light" (click)='editMeal(currentMeal)'>Edit Meal!</button>
+          <button class="btn waves-effect waves-light" (click)='editMeal(currentMeal)'>Edit Meal</button>
         </div>
       </div>
     </div>
