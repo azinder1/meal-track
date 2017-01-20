@@ -5,8 +5,8 @@ import{ Meal } from './meal.model'
   selector: 'meal-list',
   template: `
   <div class="row">
-    <div class="input-field col s4">
-      <select id="drop-down" (change)="onChange($event.target.value)" >
+    <div class="input-field col s3">
+      <select class="drop-down" (change)="onChange($event.target.value)" >
         <option value="" disabled selected>Choose your option</option>
         <option value="all">All meals</option>
         <option value="lightMeal">Light Meals</option>
@@ -16,16 +16,18 @@ import{ Meal } from './meal.model'
   </div>
   <br>
   <div *ngFor = 'let currentMeal of childMealList | caloriefilter:filterByCalorie'>
-    <div class="col s4 meals">
-      <div class='panel'>
-        <h4>{{currentMeal.name}}</h4>
-        <hr>
-        <ul>
-          <li>{{currentMeal.details}}</li>
-          <li>{{currentMeal.calories}}</li>
-        </ul>
+    <div class="col s4 meals card">
+      <div class='card blue-grey darken-1'>
+        <div class="card-content white-text">
+          <span class="card-title">{{currentMeal.name}}</span>
+          <hr>
+          <ul>
+            <li>{{currentMeal.details}}</li>
+            <li>{{currentMeal.calories}}</li>
+          </ul>
+          <button class="btn waves-effect waves-light" (click)='editMeal(currentMeal)'>Edit Meal!</button>
+        </div>
       </div>
-      <button class="btn waves-effect waves-light" (click)='editMeal(currentMeal)'>Edit Meal!</button>
     </div>
   </div>
   `
@@ -38,7 +40,6 @@ export class MealListComponent {
   filterByCalorie: string = "allMeals"
 
   onChange(optionFromMenu) {
-    console.log("hello")
     this.filterByCalorie = optionFromMenu
   }
 

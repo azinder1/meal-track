@@ -8,10 +8,11 @@ import { Meal } from './meal.model'
     <h1>Calories Counter</h1>
     <div class="row">
       <meal-list [childMealList]="masterMealList" (clickSender)="editMeal($event)"></meal-list>
-
-      <edit-meal [childSelectedMeal]="selectedMeal" (doneEditingSender)="doneEditing()"></edit-meal>
-      <add-meal (newAddSender)="doneAdding()" (newMealSender)="addMeal($event)" [childNewMeal]="newMeal"></add-meal>
     </div>
+      <div class="row">
+        <edit-meal [childSelectedMeal]="selectedMeal" (doneEditingSender)="doneEditing()"></edit-meal>
+      </div>
+      <add-meal (newAddSender)="doneAdding()" (newMealSender)="addMeal($event)" [childNewMeal]="newMeal"></add-meal>
     <button class="btn-floating btn-large waves-effect waves-light red" *ngIf="!newMeal" (click)="addMealFormShow()">Add</button>
   </div>
   `
@@ -29,7 +30,6 @@ export class AppComponent{
 
   editMeal(clickedMeal) {
     this.selectedMeal = clickedMeal
-    console.log(this.selectedMeal)
   }
 
   doneEditing() {
