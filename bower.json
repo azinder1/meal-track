@@ -1,0 +1,21 @@
+{
+  "name": "meal-tracker",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Adam Zinder <adam.zinder@gmail.com"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/brianpritt/kegerator",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "angularfire": "^2.2.0"
+  }
+}
