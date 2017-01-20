@@ -4,15 +4,18 @@ import{ Meal } from './meal.model'
 @Component({
   selector: 'meal-list',
   template: `
-  <h1>Hello World</h1>
-  <div class="form-control">
-    <select (change)="onChange($event.taget.value)">
-      <option value="lightMeal">Light Meals</option>
-      <option value="heavyMeal">Heavy Meals</option>
-    </select>
+  <div class="row">
+    <div class="input-field col s4">
+      <select id="drop-down" (change)="onChange($event.target.value)" >
+        <option value="" disabled selected>Choose your option</option>
+        <option value="all">All meals</option>
+        <option value="lightMeal">Light Meals</option>
+        <option value="heavyMeal">Heavy Meals</option>
+      </select>
+    </div>
   </div>
-
-  <div *ngFor = 'let currentMeal of childMealList | caloriefilter:filerByCalorie'>
+  <br>
+  <div *ngFor = 'let currentMeal of childMealList | caloriefilter:filterByCalorie'>
     <div class="col s4 meals">
       <div class='panel'>
         <h4>{{currentMeal.name}}</h4>
@@ -35,6 +38,7 @@ export class MealListComponent {
   filterByCalorie: string = "allMeals"
 
   onChange(optionFromMenu) {
+    console.log("hello")
     this.filterByCalorie = optionFromMenu
   }
 

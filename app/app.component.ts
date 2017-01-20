@@ -11,8 +11,8 @@ import { Meal } from './meal.model'
 
       <edit-meal [childSelectedMeal]="selectedMeal" (doneEditingSender)="doneEditing()"></edit-meal>
       <add-meal (newAddSender)="doneAdding()" (newMealSender)="addMeal($event)" [childNewMeal]="newMeal"></add-meal>
-      <button class="btn-floating btn-large waves-effect waves-light red" *ngIf="!newMeal" (click)="addMealFormShow()">Add</button>
     </div>
+    <button class="btn-floating btn-large waves-effect waves-light red" *ngIf="!newMeal" (click)="addMealFormShow()">Add</button>
   </div>
   `
 })
