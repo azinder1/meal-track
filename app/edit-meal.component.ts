@@ -5,7 +5,7 @@ import{ Meal } from './meal.model';
   selector: 'edit-meal',
   template: `
   <div *ngIf="childSelectedMeal">
-    <h4>Edit Keg Info:</h4>
+    <h4>Edit Meal Info:</h4>
     <label>Meal Name:</label>
     <input [(ngModel)]="childSelectedMeal.name">
     <label>Meal Details:</label>

@@ -8,6 +8,7 @@ import { Meal } from './meal.model';
 
 export class CaloriePipe implements PipeTransform {
   transform(input: Meal[], mealCalorie) {
+    console.log(mealCalorie)
     var output: Meal[] = [];
     if (mealCalorie ==="lightMeal") {
       for (var i = 0; i < input.length; i++) {

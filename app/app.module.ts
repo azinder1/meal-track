@@ -6,10 +6,11 @@ import { MealListComponent } from './meal-list.component';
 import { EditMealComponent } from './edit-meal.component';
 import { NewMealComponent } from './add-meal.component';
 import { CaloriePipe } from './calorie.pipe';
+import { DatePipe } from './date.pipe'
 
 @NgModule({
   imports: [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, MealListComponent, EditMealComponent, NewMealComponent, CaloriePipe ],
+  declarations: [ AppComponent, MealListComponent, EditMealComponent, NewMealComponent, CaloriePipe, DatePipe ],
   bootstrap:    [ AppComponent ]
 })
 
